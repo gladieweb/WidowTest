@@ -1,18 +1,19 @@
-﻿using System.Collections;
+﻿using System.Data.Common;
+using System.Security.Cryptography.X509Certificates;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class TournamentElement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField]
+    private UnityEngine.UI.Text idText;
+    [SerializeField]
+    private UnityEngine.UI.Text dateText;
 
-    // Update is called once per frame
-    void Update()
+    public void Initialize(TournamentData data)
     {
-        
+        idText.text = data.id;
+        dateText.text = data.attributes.createdAt;
     }
 }
